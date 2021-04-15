@@ -40,7 +40,7 @@ void Tick()
 	static bool menu_opened = false;
 	if (GetAsyncKeyState(VK_F2) & 1) menu_opened = !menu_opened; //Our menu key
 
-	if (ZeroGUI::Window(crypt("Superior UE4 GUI"), &pos, FVector2D{ 500.0f, 300.0f }, menu_opened))
+	if (ZeroGUI::Window("Superior UE4 GUI", &pos, FVector2D{ 500.0f, 300.0f }, menu_opened))
 	{
 		//Simple Tabs
 		if (ZeroGUI::ButtonTab("Tab 1", FVector2D{ 110, 25 }, tab == 0)) tab = 0;
