@@ -19,3 +19,14 @@ Screenshots with default style:<br>
  
 Ingame render
 ![EU4 GUI](screenshots/canvas4.jpg "")
+
+Small "How to use" guide:
+First you need get UCanvas from game.
+After it you can draw with him like this:
+
+```cpp
+void Test()
+{
+
+}
+```
