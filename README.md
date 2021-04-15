@@ -65,7 +65,7 @@ void Tick()
 		ZeroGUI::PushNextElementY(Menu::pos.Y + 50.0f);
 		ZeroGUI::Combobox("Combobox", FVector2D{ 100, 25 }, &test_number, "None", "First", "Second", "Third", NULL); //NULL at end is required!
 		ZeroGUI::SameLine();//inline items
-		if (ZeroGUI::Button("It's a Button!", FVector2D{ 100, 25 })) { //clicked! }
+		if (ZeroGUI::Button("It's a Button!", FVector2D{ 100, 25 })) { /*clicked!*/ }
 		
 		//Color Picker
 		ZeroGUI::ColorPicker("Color Picker", &test_color);
