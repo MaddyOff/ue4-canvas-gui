@@ -189,15 +189,18 @@ namespace ZeroGUI
 	{
 		sameLine = true;
 	}
-	void PushNextElementY(float y)
+	void PushNextElementY(float y, bool from_last_element = true)
 	{
 		pushY = true;
-		pushYvalue = y;
+		if (from_last_element)
+			pushYvalue = last_element_pos.Y + last_element_size.Y + y;
+		else
+			pushYvalue = y;
 	}
 	void NextColumn(float x)
 	{
 		offset_x = x;
-		PushNextElementY(first_element_pos.Y);
+		PushNextElementY(first_element_pos.Y, false);
 	}
 	void ClearFirstPos()
 	{
@@ -330,7 +333,7 @@ namespace ZeroGUI
 
 		//Bg
 		drawFilledRect(FVector2D{ pos->X, pos->Y }, size.X, size.Y, Colors::Window_Background);
-		drawFilledRect(FVector2D{ pos->X, pos->Y }, 122, size.Y, FLinearColor{ 0.006f, 0.006f, 0.006f, 1.0f });//Left bg
+		//drawFilledRect(FVector2D{ pos->X, pos->Y }, 122, size.Y, FLinearColor{ 0.006f, 0.006f, 0.006f, 1.0f });//My tabs bg
 
 		//Header
 		drawFilledRect(FVector2D{ pos->X, pos->Y }, size.X, 25.0f, Colors::Window_Header);
@@ -344,7 +347,7 @@ namespace ZeroGUI
 		return true;
 	}
 
-	void Text(char* text)
+	void Text(char* text, bool center = false, bool outline = false)
 	{
 		elements_count++;
 
@@ -369,7 +372,10 @@ namespace ZeroGUI
 
 		//Text
 		FVector2D textPos = FVector2D{ pos.X + 5.0f, pos.Y + size / 2 };
-		TextLeft(text, textPos, FLinearColor{ 1.0f, 1.0f, 1.0f, 1.0f }, false);
+		if (center)
+			TextCenter(text, textPos, FLinearColor{ 1.0f, 1.0f, 1.0f, 1.0f }, outline);
+		else
+			TextLeft(text, textPos, FLinearColor{ 1.0f, 1.0f, 1.0f, 1.0f }, outline);
 
 		sameLine = false;
 		last_element_pos = pos;
