@@ -2,7 +2,7 @@
 
 ## It's a simple Canvas GUI for Unreal Engine 4 with mouse operation.
 
-Included elements:
+Included elements:<br>
 Rendering Text (left/center);<br>
 Rendering Rects;<br>
 Rendering Circles (filled and not);<br>
