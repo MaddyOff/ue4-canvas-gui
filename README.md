@@ -54,19 +54,22 @@ void Tick()
 		//Some Elements
 		static bool text_check = false;
 		static float text_slider = 15.0f;
-		static int test_hotkey = 0;
+		static int test_hotkey = 0x2;
 		static FLinearColor test_color{ 0.0f, 0.0f, 1.0f, 1.0f };
-		
+
 		ZeroGUI::Checkbox("Test Checkbox", &text_check);
 		ZeroGUI::SliderFloat("Test Slider", &text_slider, 0.0f, 180.0f);
 		ZeroGUI::Hotkey("Test Hotkey", FVector2D{ 80, 25 }, &test_hotkey);
-		
+
+		ZeroGUI::Text("Left aligned text!");
+		ZeroGUI::Text("Outlined and Center aligned text!", true, true);
+
 		//Element with padding
-		ZeroGUI::PushNextElementY(Menu::pos.Y + 50.0f);
+		ZeroGUI::PushNextElementY(50.0f);
 		ZeroGUI::Combobox("Combobox", FVector2D{ 100, 25 }, &test_number, "None", "First", "Second", "Third", NULL); //NULL at end is required!
 		ZeroGUI::SameLine();//inline items
 		if (ZeroGUI::Button("It's a Button!", FVector2D{ 100, 25 })) { /*clicked!*/ }
-		
+
 		//Color Picker
 		ZeroGUI::ColorPicker("Color Picker", &test_color);
 	}
