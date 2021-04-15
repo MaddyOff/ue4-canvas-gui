@@ -43,6 +43,7 @@ void Tick()
 	if (ZeroGUI::Window("Superior UE4 GUI", &pos, FVector2D{ 500.0f, 300.0f }, menu_opened))
 	{
 		//Simple Tabs
+		static int tab = 0;
 		if (ZeroGUI::ButtonTab("Tab 1", FVector2D{ 110, 25 }, tab == 0)) tab = 0;
 		if (ZeroGUI::ButtonTab("Tab 2", FVector2D{ 110, 25 }, tab == 1)) tab = 1;
 		if (ZeroGUI::ButtonTab("Tab 3", FVector2D{ 110, 25 }, tab == 2)) tab = 2;
