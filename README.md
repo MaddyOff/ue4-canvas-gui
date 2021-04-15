@@ -70,5 +70,7 @@ void Tick()
 		//Color Picker
 		ZeroGUI::ColorPicker("Color Picker", &test_color);
 	}
+	ZeroGUI::Render();//Custom Render. I use it for drawing Combobox and ColorPicker over the menu
+	ZeroGUI::Draw_Cursor(menu_opened);
 }
 ```
