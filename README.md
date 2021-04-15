@@ -10,7 +10,7 @@ Button, Slider, Checkbox, Combobox, Hotkeys and ColorPicker.
 
 Implemented a simple post-render system to draw on top of menu and all.
 
-Screenshots with default style:
+Screenshots with default style:<br>
 ![EU4 GUI](screenshots/canvas1.jpg "")
  
 ![EU4 GUI](screenshots/canvas2.jpg "")
