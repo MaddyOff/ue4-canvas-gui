@@ -21,8 +21,8 @@ Ingame render
 ![EU4 GUI](screenshots/canvas4.jpg "")
 
 ## Small "How to use" guide:<br>
-First you need get UCanvas from game.<br>
-After it you can draw with him like this:<br>
+First you need get **UCanvas** from game.<br>
+After it you can draw like this:<br>
 
 ```cpp
 //I'll show you with an example Post Render Hook
