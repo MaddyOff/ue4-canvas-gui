@@ -1,6 +1,6 @@
 # ue4-canvas-gui
 
-It's a simple Canvas GUI for Unreal Engine 4 with mouse operation.
+## It's a simple Canvas GUI for Unreal Engine 4 with mouse operation.
 
 Included elements:
 Rendering Text (left/center);<br>
@@ -20,7 +20,7 @@ Screenshots with default style:<br>
 Ingame render
 ![EU4 GUI](screenshots/canvas4.jpg "")
 
-Small "How to use" guide:<br>
+## Small "How to use" guide:<br>
 First you need get UCanvas from game.<br>
 After it you can draw with him like this:<br>
 
