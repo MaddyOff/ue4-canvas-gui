@@ -62,7 +62,7 @@ void Tick()
 		ZeroGUI::Hotkey("Test Hotkey", FVector2D{ 80, 25 }, &test_hotkey);
 
 		ZeroGUI::Text("Left aligned text!");
-		ZeroGUI::Text("Outlined and Center aligned text!", true, true);
+		ZeroGUI::Text("Outline and Center aligned text!", true, true);
 
 		//Element with padding
 		ZeroGUI::PushNextElementY(50.0f);
