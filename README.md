@@ -36,9 +36,11 @@ void PostRenderHook(UGameViewportClient* viewport, UCanvas* canvas)
 void Tick()
 {
 	ZeroGUI::Input::Handle();
-	if (GetAsyncKeyState(VK_F2) & 1) cfg.menu.enabled = !cfg.menu.enabled;
+	
+	static bool menu_opened = false;
+	if (GetAsyncKeyState(VK_F2) & 1) menu_opened = !menu_opened; //Our menu key
 
-	if (ZeroGUI::Window(crypt("Superior UE4 GUI"), &pos, FVector2D{ 500.0f, 300.0f }, cfg.menu.enabled))
+	if (ZeroGUI::Window(crypt("Superior UE4 GUI"), &pos, FVector2D{ 500.0f, 300.0f }, menu_opened))
 	{
 		//Simple Tabs
 		if (ZeroGUI::ButtonTab("Tab 1", FVector2D{ 110, 25 }, tab == 0)) tab = 0;
@@ -62,9 +64,9 @@ void Tick()
 		ZeroGUI::PushNextElementY(Menu::pos.Y + 50.0f);
 		ZeroGUI::Combobox("Combobox", FVector2D{ 100, 25 }, &test_number, "None", "First", "Second", "Third", NULL); //NULL at end is required!
 		ZeroGUI::SameLine();//inline items
-		if (ZeroGUI::Button("Unload", FVector2D{ 80, 25 })) { //clicked! }
+		if (ZeroGUI::Button("It's a Button!", FVector2D{ 100, 25 })) { //clicked! }
 		
-		//Simple Color Picker
+		//Color Picker
 		ZeroGUI::ColorPicker("Color Picker", &test_color);
 	}
 }
